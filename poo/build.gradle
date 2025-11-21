@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+group = 'archisolutions.app'
+version = '1.0-SNAPSHOT'
+
+// Especifica la versión de Java para tu proyecto
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // The JUnit 5 Bill of Materials (BOM) to manage versions
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+
+    // Usamos el artefacto principal que incluye tanto la API como el motor.
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // **THE FIX:** Dependency for RUNNING tests (The Engine)
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    // Dependency for AssertJ fluent assertions
+    testImplementation 'org.assertj:assertj-core:3.25.3'
+}
+
+test {
+    useJUnitPlatform()
+}

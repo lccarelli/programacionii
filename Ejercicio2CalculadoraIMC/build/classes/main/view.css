@@ -1,0 +1,108 @@
+/* fondo general y tipografía */
+.root {
+    -fx-font-family: "Helvetica Neue", "Arial";
+    -fx-background-color: linear-gradient(to bottom, #f0f4ff, #ffffff);
+    -fx-font-size: 15px;
+}
+
+/* ancho común para controles principales */
+.wide-control {
+    -fx-pref-width: 300;
+}
+
+/* título */
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+/* etiquetas de los campos */
+.input-label {
+    -fx-font-size: 16px;
+}
+
+/* TextField: texto y placeholder más grandes */
+.text-field {
+    -fx-font-size: 15px;
+}
+
+.text-field .text {
+    -fx-font-smoothing-type: lcd;
+}
+
+/* placeholder (promptText) */
+.text-field:focused .text-input-prompt,
+.text-field .text-input-prompt {
+    -fx-font-size: 14px;
+    -fx-text-fill: #9e9e9e;
+}
+
+/* botón principal */
+.primary-button {
+    -fx-background-color: #5a6bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 10;
+    -fx-padding: 8 20 8 20;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3f51d6;
+}
+
+/* “caja” del resultado (base, tamaño fijo, rectángulo) */
+.result-label {
+    -fx-font-size: 18px;                 /* tipografía más grande */
+    -fx-padding: 14 22 14 22;            /* más padding interno */
+    -fx-background-color: transparent;   /* neutro al inicio */
+    -fx-text-fill: #555555;
+
+    -fx-border-color: #5a6bff;
+    -fx-border-width: 2;                 /* borde más grueso */
+    -fx-border-radius: 0;                /* sin curvas -> rectángulo */
+    -fx-background-radius: 0;
+
+    -fx-alignment: center;
+
+    -fx-pref-width: 300;
+    -fx-min-height: 60;
+    -fx-pref-height: 60;
+}
+
+
+/* Bajo peso -> amarillo */
+.result-label.underweight {
+    -fx-background-color: #fff8d1;
+    -fx-border-color: #f0c419;
+    -fx-text-fill: #8c6c00;
+}
+
+/* Normal -> verde */
+.result-label.normal {
+    -fx-background-color: #e0f8e9;
+    -fx-border-color: #4caf50;
+    -fx-text-fill: #2e7d32;
+}
+
+/* Sobrepeso -> naranja */
+.result-label.overweight {
+    -fx-background-color: #ffe9cc;
+    -fx-border-color: #ff9800;
+    -fx-text-fill: #e65100;
+}
+
+/* Obesidad -> rojo */
+.result-label.obese {
+    -fx-background-color: #ffe4e4;
+    -fx-border-color: #f44336;
+    -fx-text-fill: #b71c1c;
+}
+
+/* Errores de validación */
+.result-label.error {
+    -fx-background-color: rgba(217, 83, 79, 0.10);
+    -fx-border-color: #d9534f;
+    -fx-text-fill: #a94442;
+}

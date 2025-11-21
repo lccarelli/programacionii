@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.Controller"
+            prefWidth="460.0" prefHeight="320.0"
+            stylesheets="@view.css">
+
+    <center>
+        <VBox alignment="CENTER" spacing="18">
+            <padding>
+                <Insets top="24" right="24" bottom="24" left="24"/>
+            </padding>
+
+            <!-- Título interno (opcional) -->
+            <Label text="Calculadora de IMC"
+                   styleClass="title-label"/>
+
+            <!-- Campo Peso -->
+            <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="300">
+                <Label text="Peso (kg)"
+                       styleClass="input-label"/>
+                <TextField fx:id="txtPeso"
+                           promptText="Ingresá tu peso en kg"
+                           prefWidth="300"
+                           styleClass="wide-control"/>
+            </VBox>
+
+            <!-- Campo Altura -->
+            <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="300">
+                <Label text="Altura (m)"
+                       styleClass="input-label"/>
+                <TextField fx:id="txtAltura"
+                           promptText="Ingresá tu altura en metros"
+                           prefWidth="300"
+                           styleClass="wide-control"/>
+            </VBox>
+
+            <!-- Botón Calcular -->
+            <Button text="Calcular"
+                    onAction="#onCalcular"
+                    styleClass="primary-button,wide-control"/>
+
+            <!-- Resultado / warning -->
+            <Label fx:id="lblResultado"
+                text="RESULTADO"
+                wrapText="true"
+                styleClass="result-label,wide-control"/>
+        </VBox>
+    </center>
+</BorderPane>
