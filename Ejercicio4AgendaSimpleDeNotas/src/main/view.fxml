@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.Controller"
+            prefWidth="720.0" prefHeight="400.0"
+            stylesheets="@view.css">
+
+    <center>
+        <HBox spacing="20">
+            <padding>
+                <Insets top="18" right="24" bottom="18" left="24"/>
+            </padding>
+
+            <!-- Columna izquierda: formulario -->
+            <VBox alignment="TOP_CENTER" spacing="14">
+                <!-- Título de la agenda -->
+                <Label text="Agenda de Notas"
+                       styleClass="title-label"/>
+
+                <!-- Campo Título -->
+                <HBox spacing="8" alignment="CENTER_LEFT" maxWidth="460">
+                    <Label text="Título:"
+                           styleClass="field-label"/>
+                    <TextField fx:id="txtTitulo"
+                               promptText="Título de la nota"
+                               HBox.hgrow="ALWAYS"
+                               styleClass="note-field"/>
+                </HBox>
+
+                <!-- Campo Contenido -->
+                <HBox spacing="8" alignment="TOP_LEFT" maxWidth="460">
+                    <Label text="Contenido:"
+                           styleClass="field-label"/>
+                    <TextArea fx:id="txtContenido"
+                              promptText="Escriba aquí el contenido de la nota"
+                              prefRowCount="5"
+                              HBox.hgrow="ALWAYS"
+                              styleClass="note-textarea"/>
+                </HBox>
+
+                <!-- Campo Fecha -->
+                <HBox spacing="8" alignment="CENTER_LEFT" maxWidth="460">
+                    <Label text="Fecha:"
+                           styleClass="field-label"/>
+                    <DatePicker fx:id="dpFecha"
+                                styleClass="note-date"/>
+                </HBox>
+
+                <!-- Mensaje de estado -->
+                <Label fx:id="lblEstado"
+                       text=""
+                       styleClass="status-label"/>
+
+                <!-- Botones -->
+                <HBox spacing="12" alignment="CENTER" maxWidth="460">
+                    <Button text="🧹 Limpiar"
+                            onAction="#onLimpiar"
+                            prefWidth="140"
+                            styleClass="secondary-button"/>
+
+                    <Button text="💾 Guardar"
+                            onAction="#onGuardar"
+                            prefWidth="140"
+                            styleClass="primary-button"/>
+                </HBox>
+            </VBox>
+
+            <!-- Columna derecha: lista de notas -->
+            <VBox spacing="8" alignment="TOP_LEFT">
+                <Label text="Notas guardadas"
+                       styleClass="list-title-label"/>
+
+                <ListView fx:id="lstNotas"
+                          prefWidth="220"
+                          prefHeight="280"
+                          onMouseClicked="#onSeleccionarNota"
+                          styleClass="notes-list"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

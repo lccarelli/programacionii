@@ -1,0 +1,118 @@
+.root {
+    -fx-font-family: "Helvetica Neue", "Arial";
+    -fx-background-color: linear-gradient(to bottom, #f5f7ff, #ffffff);
+}
+
+/* Título */
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474f;
+    -fx-padding: 12 0 8 0;
+}
+
+/* Etiquetas y campos */
+.field-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #455a64;
+}
+
+.task-field {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 8 6 8;
+}
+
+.date-picker {
+    -fx-font-size: 13px;
+}
+
+/* Botones */
+.primary-button {
+    -fx-background-color: #5a6bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14 6 14;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3f51d6;
+}
+
+.danger-button {
+    -fx-background-color: #ef5350;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 12 6 12;
+}
+
+.danger-button:hover {
+    -fx-background-color: #e53935;
+}
+
+/* Tabla */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #90caf9;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 13px;
+}
+
+/* Colores por estado (fila) */
+.table-row-cell.row-pending {
+    -fx-background-color: #e3f2fd;      /* azul claro */
+}
+
+.table-row-cell.row-delayed {
+    -fx-background-color: #fff8e1;      /* amarillo claro */
+    -fx-text-fill: #e65100;
+}
+
+.table-row-cell.row-done {
+    -fx-background-color: #e8f5e9;      /* verde claro */
+}
+
+.table-row-cell:selected.row-pending {
+    -fx-background-color: #bbdefb;
+}
+
+.table-row-cell:selected.row-delayed {
+    -fx-background-color: #ffe082;
+}
+
+.table-row-cell:selected.row-done {
+    -fx-background-color: #a5d6a7;
+}
+
+/* Mensajes */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #546e7a;
+}
+
+.status-label.error {
+    -fx-text-fill: #c62828;
+}
+
+.status-label.ok {
+    -fx-text-fill: #2e7d32;
+}
+
+/* Tips */
+.hint-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #546e7a;
+}
+
+.hint-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #78909c;
+}

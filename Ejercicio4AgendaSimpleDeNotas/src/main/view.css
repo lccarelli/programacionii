@@ -1,0 +1,16 @@
+/* título de la columna de lista */
+.list-title-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5d4037;
+}
+
+/* ListView de notas */
+.notes-list {
+    -fx-background-color: #fffdf7;
+    -fx-border-color: #d7ccc8;
+    -fx-border-width: 1;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-font-size: 13px;
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.Controller"
+            prefWidth="420.0" prefHeight="320.0">
+
+    <center>
+        <VBox alignment="CENTER" spacing="16">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Contador de Clicks"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <!-- Label con el contador actual -->
+            <Label fx:id="lblCount"
+                   text="Clicks: 0"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+            <!-- Botones -->
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="Click aquí"
+                        onAction="#onClick"
+                        prefWidth="140"
+                        style="-fx-font-size: 16px;"/>
+
+                <Button text="Ver historial"
+                        onAction="#onVerHistorial"
+                        prefWidth="140"
+                        style="-fx-font-size: 16px;"/>
+            </HBox>
+
+            <!-- TextArea para ver el contenido del .txt -->
+            <Label text="Historial (fecha/hora y número de click):"
+                   style="-fx-font-size: 14px;"/>
+
+            <TextArea fx:id="txtHistorial"
+                      prefRowCount="6"
+                      prefWidth="360"
+                      editable="false"
+                      wrapText="true"/>
+        </VBox>
+    </center>
+</BorderPane>

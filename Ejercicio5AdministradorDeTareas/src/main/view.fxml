@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.Controller"
+            prefWidth="760.0" prefHeight="420.0"
+            stylesheets="@view.css">
+
+    <top>
+        <Label text="Administrador de Tareas"
+               BorderPane.alignment="CENTER"
+               styleClass="title-label"/>
+    </top>
+
+    <center>
+        <VBox spacing="12" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="12" right="20" bottom="12" left="20"/>
+            </padding>
+
+            <!-- fila alta tarea -->
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Label text="Nombre de tarea:"
+                       styleClass="field-label"/>
+
+                <TextField fx:id="txtNombre"
+                           promptText="Ej: Buscar info"
+                           HBox.hgrow="ALWAYS"
+                           styleClass="task-field"/>
+
+                <Label text="Fecha estimada:"
+                       styleClass="field-label"/>
+
+                <DatePicker fx:id="dpEstimado"
+                            styleClass="date-picker"/>
+
+                <Button text="＋ Agregar"
+                        onAction="#onAgregar"
+                        styleClass="primary-button"/>
+            </HBox>
+
+            <!-- tabla tareas + acciones -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TableView fx:id="tblTareas"
+                           prefWidth="600"
+                           prefHeight="260"
+                           tableMenuButtonVisible="false">
+
+                    <columns>
+                        <TableColumn fx:id="colHecha" text="Hecha" prefWidth="60"/>
+                        <TableColumn fx:id="colNombre" text="Tarea" prefWidth="220"/>
+                        <TableColumn fx:id="colCreada" text="Creada" prefWidth="140"/>
+                        <TableColumn fx:id="colEstimado" text="Estimada" prefWidth="140"/>
+                    </columns>
+                </TableView>
+
+                <VBox alignment="TOP_CENTER" spacing="10">
+                    <Button text="🗑 Eliminar seleccionada"
+                            onAction="#onEliminar"
+                            prefWidth="150"
+                            styleClass="danger-button"/>
+
+                    <Label text="Colores:"
+                           styleClass="hint-title"/>
+                    <Label text="• Azul: pendiente
+• Amarillo: demorada (vencida)
+• Verde: hecha"
+                           wrapText="true"
+                           styleClass="hint-label"/>
+                </VBox>
+            </HBox>
+
+            <Label fx:id="lblMensaje"
+                   text=""
+                   styleClass="status-label"/>
+        </VBox>
+    </center>
+</BorderPane>
