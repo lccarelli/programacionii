@@ -1,0 +1,6 @@
+nombre;precio;categoria
+carne asado;5000.00;Alimentos
+leche;2000.00;Alimentos
+pantalon;30000.00;Ropa
+w;1.30;Otros
+t;1.60;Otros

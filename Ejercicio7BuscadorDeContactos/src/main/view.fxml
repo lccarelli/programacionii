@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="480.0" prefWidth="780.0"
+            stylesheets="@view.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.Controller">
+
+    <top>
+        <Label text="Buscador de Contactos"
+               styleClass="title-label"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="18">
+            <padding>
+                <Insets top="12" right="20" bottom="12" left="20"/>
+            </padding>
+
+            <!-- FILTRO + SELECCIONAR ARCHIVO -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Buscar:" styleClass="field-label"/>
+                <TextField fx:id="txtFiltro"
+                           promptText="Nombre, apellido o teléfono"
+                           HBox.hgrow="ALWAYS"
+                           styleClass="text-field"/>
+
+                <Button text="📂 Abrir archivo..."
+                        onAction="#onSeleccionarArchivo"
+                        styleClass="secondary-button"/>
+            </HBox>
+
+            <!-- TABLA -->
+            <TableView fx:id="tblContactos"
+                       prefHeight="260"
+                       prefWidth="730"
+                       editable="true"
+                       tableMenuButtonVisible="false">
+
+                <columns>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150"/>
+                    <TableColumn fx:id="colApellido" text="Apellido" prefWidth="150"/>
+                    <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="150"/>
+                    <TableColumn fx:id="colCreado" text="Creado" prefWidth="140"/>
+                    <TableColumn fx:id="colModificado" text="Modificado" prefWidth="140"/>
+                </columns>
+            </TableView>
+
+            <!-- NUEVO CONTACTO -->
+            <VBox spacing="6" alignment="CENTER_LEFT" maxWidth="730">
+                <Label text="Nuevo contacto" styleClass="field-label"/>
+
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtNombreNuevo"
+                               promptText="Nombre"
+                               styleClass="text-field"
+                               prefWidth="160"/>
+                    <TextField fx:id="txtApellidoNuevo"
+                               promptText="Apellido"
+                               styleClass="text-field"
+                               prefWidth="160"/>
+                    <TextField fx:id="txtTelefonoNuevo"
+                               promptText="Teléfono"
+                               styleClass="text-field"
+                               prefWidth="160"/>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Button text="＋ Agregar"
+                            onAction="#onAgregarNuevo"
+                            styleClass="primary-button"/>
+                    <Button text="🗑 Eliminar seleccionado"
+                            onAction="#onEliminarSeleccionado"
+                            styleClass="danger-button"/>
+                </HBox>
+            </VBox>
+
+            <!-- MENSAJE DE ESTADO -->
+            <Label fx:id="lblMensaje"
+                   text=""
+                   maxWidth="Infinity"
+                   alignment="CENTER"
+                   styleClass="status-label"/>
+        </VBox>
+    </center>
+</BorderPane>
+

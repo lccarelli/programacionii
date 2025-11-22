@@ -1,0 +1,112 @@
+.root {
+    -fx-font-family: "Helvetica Neue", "Arial";
+    -fx-background-color: linear-gradient(to bottom, #f5f7ff, #ffffff);
+}
+
+/* Título */
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474f;
+    -fx-padding: 12 0 8 0;
+}
+
+/* Caja del formulario */
+.form-box {
+    -fx-background-color: #ffffff;
+    -fx-padding: 12 16 12 16;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* Etiquetas */
+.field-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #455a64;
+}
+
+/* Campos de texto y combo */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 8 6 8;
+}
+
+.combo-box {
+    -fx-font-size: 13px;
+}
+
+/* Botones */
+.primary-button {
+    -fx-background-color: #5a6bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14 6 14;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3f51d6;
+}
+
+.secondary-button {
+    -fx-background-color: #eceff1;
+    -fx-text-fill: #37474f;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14 6 14;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #dde3e8;
+}
+
+.danger-button {
+    -fx-background-color: #ef5350;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 12 6 12;
+}
+
+.danger-button:hover {
+    -fx-background-color: #e53935;
+}
+
+/* Tabla */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b0bec5;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 13px;
+}
+
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* mensajes */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #546e7a;
+}
+
+.status-label.error {
+    -fx-text-fill: #c62828;
+}
+
+.status-label.ok {
+    -fx-text-fill: #2e7d32;
+}
+
+/* altura fija de las filas de la tabla */
+.table-row-cell {
+    -fx-cell-size: 28px;
+}
+

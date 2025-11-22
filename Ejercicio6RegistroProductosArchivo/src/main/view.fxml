@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="440.0" prefWidth="720.0"
+            stylesheets="@view.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.Controller">
+
+    <top>
+        <Label text="Registro de Productos"
+               styleClass="title-label"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="18">
+            <padding>
+                <Insets top="12" right="20" bottom="12" left="20"/>
+            </padding>
+
+            <!-- FORMULARIO EN COLUMNA -->
+            <VBox alignment="TOP_LEFT"
+                  maxWidth="420"
+                  spacing="10"
+                  styleClass="form-box">
+
+                <Label text="Nombre del producto:"
+                       styleClass="field-label"/>
+                <TextField fx:id="txtNombre"
+                           promptText="Ej: Notebook"
+                           styleClass="text-field"/>
+
+                <Label text="Precio:"
+                       styleClass="field-label"/>
+                <TextField fx:id="txtPrecio"
+                           promptText="Ej: 199999.99"
+                           styleClass="text-field"/>
+
+                <Label text="Categoría:"
+                       styleClass="field-label"/>
+                <ComboBox fx:id="cmbCategoria"
+                          prefHeight="25.0"
+                          prefWidth="387.0"
+                          styleClass="combo-box"/>
+
+                <!-- Botones de acción del formulario -->
+                <HBox alignment="CENTER_RIGHT" spacing="8">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="＋ Agregar"
+                            onAction="#onAgregar"
+                            styleClass="primary-button"/>
+                </HBox>
+            </VBox>
+
+            <!-- TABLA -->
+            <TableView fx:id="tblProductos"
+                       prefHeight="260"
+                       prefWidth="680"
+                       tableMenuButtonVisible="false">
+
+                <columns>
+                    <TableColumn fx:id="colNombre"
+                                 text="Nombre"
+                                 prefWidth="260"/>
+                    <TableColumn fx:id="colPrecio"
+                                 text="Precio"
+                                 prefWidth="160"/>
+                    <TableColumn fx:id="colCategoria"
+                                 text="Categoría"
+                                 prefWidth="240"/>
+                </columns>
+            </TableView>
+
+            <!-- BOTONES INFERIORES + MENSAJE -->
+            <VBox spacing="6" alignment="CENTER" prefWidth="680">
+
+                <!-- fila de botones -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <!-- izquierda -->
+                    <Button text="🗑 Eliminar seleccionado"
+                            onAction="#onEliminar"
+                            styleClass="danger-button"/>
+
+                    <!-- estira el HBox -->
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <!-- derecha -->
+                    <Button text="💰 Ver resumen"
+                            onAction="#onVerResumen"
+                            styleClass="secondary-button"/>
+                </HBox>
+
+                <!-- mensaje centrado debajo -->
+                <Label fx:id="lblMensaje"
+                       text=""
+                       maxWidth="Infinity"
+                       alignment="CENTER"
+                       styleClass="status-label"/>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
